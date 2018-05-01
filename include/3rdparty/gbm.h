@@ -209,6 +209,10 @@ enum gbm_bo_flags {
     * with GBM_BO_USE_CURSOR. but may not work for other combinations.
     */
    GBM_BO_USE_WRITE    = (1 << 3),
+   /**
+    * Buffer is linear, i.e. not tiled.
+    */
+   GBM_BO_USE_LINEAR = (1 << 4),
 };
 
 int
@@ -271,12 +275,6 @@ gbm_bo_get_fd(struct gbm_bo *bo);
 
 int
 gbm_bo_write(struct gbm_bo *bo, const void *buf, size_t count);
-
-int
-gbm_bo_ref(struct gbm_bo *bo);
-
-int
-gbm_bo_unref(struct gbm_bo *bo);
 
 void
 gbm_bo_set_user_data(struct gbm_bo *bo, void *data,
