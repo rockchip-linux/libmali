@@ -49,6 +49,19 @@ endif(DP_FEATURE MATCHES "wayland")
 
 endif(TARGET_SOC MATCHES "rk3399")
 
+if (TARGET_SOC MATCHES "rk3326")
+SET(GPU_FEATURE "${GPU_FEATURE} opencl" PARENT_SCOPE)
+SET(ABI "aarch64-linux-gnu")
+
+if (DP_FEATURE MATCHES "wayland")
+SET(TARGET_GPU_LIBRARY_NAME "libmali-bifrost-g31-r6p0-r0p0-wayland-gbm.so")
+
+elseif (DP_FEATURE MATCHES "gbm")
+SET(TARGET_GPU_LIBRARY_NAME "libmali-bifrost-g31-r6p0-r0p0-gbm.so")
+endif(DP_FEATURE MATCHES "wayland")
+
+endif(TARGET_SOC MATCHES "rk3326")
+
 if (TARGET_SOC MATCHES "rk3288")
 SET(GPU_FEATURE "${GPU_FEATURE} opencl" PARENT_SCOPE)
 SET(ABI "arm-linux-gnueabihf" CACHE STRING "default ABI")
