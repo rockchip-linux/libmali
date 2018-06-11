@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-PROJECT(MailHeaders NONE)
+PROJECT(MaliHeaders NONE)
 INCLUDE(GNUInstallDirs)
 
 add_subdirectory(${GPU_ARCHITECTURE})
