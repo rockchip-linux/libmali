@@ -3,7 +3,7 @@ PROJECT(libmali NONE)
 
 set(TARGET_SOC "rk3399" CACHE INTERNAL "Default target SoC")
 set(DP_FEATURE "wayland" CACHE INTERNAL "Default target display system")
-set(TARGET_LIB_NAME "libMail.so" CACHE INTERNAL "Default library name")
+set(TARGET_LIB_NAME "libMali.so" CACHE INTERNAL "Default library name")
 message(STATUS "Target SoC: ${TARGET_SOC}")
 message(STATUS "Display platform: ${DP_FEATURE}")
 add_subdirectory(lib)
